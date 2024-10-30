@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Page Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        /* Устанавливаем высоту и ширину для HTML и body */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Контейнер для карты */
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="display: none;">Polygons on Map</h1> <!-- Скрываем заголовок, чтобы не мешал -->
+<div id="map"></div>
+
+<script>
+    var map = L.map('map').setView([0, 0], 2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+    }).addTo(map);
+
+
+    var mapHtml = `{{ map|safe|escapejs }}`;
+    document.getElementById('map').innerHTML = mapHtml;
+</script>
+
+</body>
+</html>

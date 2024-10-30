@@ -1,8 +1,7 @@
 from django import forms
-from .models import Polygon
 
+class PolygonForm(forms.Form):
+    """Форма для создания полигона."""
 
-class PolygoneForm(forms.ModelForm):
-    model = Polygon
-    class Meta:
-        fields = '[name, polygon]'
+    name: str = forms.CharField(max_length=255)
+    coordinates: str = forms.CharField(widget=forms.Textarea)
