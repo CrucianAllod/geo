@@ -22,12 +22,12 @@ cd geoProj
 
 ### Шаг 2: Настройка окружения
 
-Создайте файл .env в корневой директории проекта и добавьте необходимые переменные окружения. Пример файла .env:
+Создайте файл .env в корневой директории проекта и добавьте необходимые переменные окружения. Пример файла .env(вы можете использовать эти данные, в своем .env):
 
 ```
-SECRET_KEY=ваш_секретный_ключ
+SECRET_KEY=django-insecure-mi47u47=bnpx%mgx@axt(64fv+m^icw6q6y#bvfr-jlsza$_*2
 DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1
+ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
 DB_NAME=geo
 DB_USER=postgres
 DB_PASSWORD=postgres
