@@ -4,9 +4,10 @@ services:
   web:
     build: .
     command: >
-      sh -c "python manage.py collectstatic --noinput && sleep 10 && python manage.py migrate && gunicorn geoProj.wsgi:application --bind 0.0.0.0:8000"
+      sh -c "python manage.py collectstatic --noinput && python manage.py migrate && gunicorn geoProj.wsgi:application --bind 0.0.0.0:8000"
     volumes:
       - .:/app
+      - staticfiles:/app/staticfiles
     ports:
       - "8000:8000"
     env_file:
@@ -35,3 +36,4 @@ services:
 
 volumes:
   postgres_data:
+  staticfiles:
