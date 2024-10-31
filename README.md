@@ -16,7 +16,7 @@
 Сначала вам нужно клонировать этот репозиторий на ваш локальный компьютер. Для этого выполните следующую команду:
 
 ```bash
-git clone https://github.com/ваш_репозиторий/geoProj.git
+git clone https://github.com/CrucianAllod/geo.git
 cd geoProj
 ```
 
